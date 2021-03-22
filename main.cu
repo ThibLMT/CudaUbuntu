@@ -38,9 +38,10 @@ int main() {
     int blockSize = 256;
     int numBlocks = (nb_elements + blockSize - 1)/blockSize;
 
+    // Sets all particle members to 0
     initialize_particle<<<numBlocks,blockSize>>>(particle,geom);
-    std::cout << "Hello, World!" << std::endl;
 
+    // Frees allocated memory
     cudaFree(particle);
     cudaFree(geom);
     return 0;

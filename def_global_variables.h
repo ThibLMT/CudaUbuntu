@@ -28,9 +28,9 @@ char Nobjfile[50];
 
 
 //
-discrete_elt *particle;  //!< array containing the whole description of particles and forces
-material_data prop_mat_part;
-geom_struct geom;
+
+material_data *prop_mat_part;
+
 
 //
 double unity;

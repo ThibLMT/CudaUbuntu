@@ -2,13 +2,14 @@
 
 #include "def_types.h"
 #include "def_global_variables.h"
+#include "allocate_variables.cuh"
+
 #define NB_PART 200
 #define SYSSIZEX 5
 #define SYSSIZEY 5
 #define SYSSIZEZ 14
 #define UNITY 0.010000
 #define BOUNDARYCONT 20;
-
 
 int main() {
     char Nlogfile[50]="logfile";
@@ -20,7 +21,7 @@ int main() {
     int nb_taches;
     int iter,niter,imicro;
     char filename[50];
-    discrete_elt **particle;
+    discrete_elt *particle;
     geom_sys *geom;
 
     cudaMallocManaged(&geom, sizeof(geom));
@@ -30,8 +31,17 @@ int main() {
     // * Get the number of boundary contacts
     geom->nb_bc = BOUNDARYCONT;
 
-    // TODO Implement set_vector function in CUDA
+    // Allocate the particle array
+    int nb_elements = geom->nb_part + geom->nb_bc + 1;
+    cudaMallocManaged(&particle,nb_elements * sizeof(discrete_elt));
 
+    int blockSize = 256;
+    int numBlocks = (nb_elements + blockSize - 1)/blockSize;
+
+    initialize_particle<<<numBlocks,blockSize>>>(particle,geom);
+    int result = particle[0].Ri.x;
     std::cout << "Hello, World!" << std::endl;
+
+    cudaFree(particle);
     return 0;
 }

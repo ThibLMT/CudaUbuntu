@@ -8,68 +8,71 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug"/>
+				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CudaUbuntu">
-				<Option output="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/CudaUbuntu" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug"/>
+				<Option output="D:/Travail/Projet/CudaUbuntu/cmake-build-debug/CudaUbuntu.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 CudaUbuntu"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 CudaUbuntu"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CudaUbuntu/fast">
-				<Option output="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/CudaUbuntu" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug"/>
+				<Option output="D:/Travail/Projet/CudaUbuntu/cmake-build-debug/CudaUbuntu.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 CudaUbuntu/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 CudaUbuntu/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/thiblmt/CLionProjects/CudaUbuntu/main.cu">
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_type.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="/home/thiblmt/CLionProjects/CudaUbuntu/CMakeLists.txt">
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/main.cu">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

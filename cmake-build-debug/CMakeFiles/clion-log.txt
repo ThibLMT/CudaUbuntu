@@ -1,11 +1,4 @@
-/snap/clion/145/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/thiblmt/CLionProjects/CudaUbuntu
--- The CUDA compiler identification is NVIDIA 11.2.152
--- Check for working CUDA compiler: /usr/local/cuda-11.2/bin/nvcc
--- Check for working CUDA compiler: /usr/local/cuda-11.2/bin/nvcc - works
--- Detecting CUDA compiler ABI info
--- Detecting CUDA compiler ABI info - done
--- Detecting CUDA compile features
--- Detecting CUDA compile features - done
+"E:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\Travail\Projet\CudaUbuntu
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/thiblmt/CLionProjects/CudaUbuntu/cmake-build-debug
+-- Build files have been written to: D:/Travail/Projet/CudaUbuntu/cmake-build-debug

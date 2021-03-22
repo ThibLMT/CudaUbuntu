@@ -3,7 +3,7 @@ project(CudaUbuntu CUDA)
 
 set(CMAKE_CUDA_STANDARD 14)
 
-add_executable(CudaUbuntu main.cu)
+add_executable(CudaUbuntu main.cu def_type.h)
 
 set_target_properties(
         CudaUbuntu

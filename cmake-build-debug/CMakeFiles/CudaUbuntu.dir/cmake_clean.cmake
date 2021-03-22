@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CudaUbuntu.dir/cmake_device_link.o"
-  "CMakeFiles/CudaUbuntu.dir/main.cu.o"
-  "CudaUbuntu"
+  "CMakeFiles/CudaUbuntu.dir/cmake_device_link.obj"
+  "CMakeFiles/CudaUbuntu.dir/main.cu.obj"
+  "CudaUbuntu.exe"
+  "CudaUbuntu.exe.manifest"
+  "CudaUbuntu.lib"
   "CudaUbuntu.pdb"
 )
 

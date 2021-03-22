@@ -66,6 +66,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/allocate_variables.cu">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/allocate_variables.cuh">
+			<Option target="CudaUbuntu"/>
+		</Unit>
 		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_const.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>

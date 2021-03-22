@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/CudaUbuntu.dir/allocate_variables.cu.obj"
   "CMakeFiles/CudaUbuntu.dir/cmake_device_link.obj"
   "CMakeFiles/CudaUbuntu.dir/main.cu.obj"
   "CudaUbuntu.exe"

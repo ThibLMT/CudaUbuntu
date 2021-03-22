@@ -9,7 +9,7 @@
 #define SYSSIZEY 5
 #define SYSSIZEZ 14
 #define UNITY 0.010000
-#define BOUNDARYCONT 20;
+#define BOUNDARYCONT 20
 
 int main() {
     char Nlogfile[50]="logfile";
@@ -24,7 +24,7 @@ int main() {
     discrete_elt *particle;
     geom_sys *geom;
 
-    cudaMallocManaged(&geom, sizeof(geom));
+    cudaMallocManaged(&geom, sizeof(geom_sys));
 
     // * Get the number of particles
     geom->nb_part = NB_PART;
@@ -39,9 +39,9 @@ int main() {
     int numBlocks = (nb_elements + blockSize - 1)/blockSize;
 
     initialize_particle<<<numBlocks,blockSize>>>(particle,geom);
-    int result = particle[0].Ri.x;
     std::cout << "Hello, World!" << std::endl;
 
     cudaFree(particle);
+    cudaFree(geom);
     return 0;
 }

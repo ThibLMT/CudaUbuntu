@@ -127,6 +127,33 @@ CudaUbuntu\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\build
 .PHONY : CudaUbuntu\fast
 
+allocate_variables.obj: allocate_variables.cu.obj
+
+.PHONY : allocate_variables.obj
+
+# target to build an object file
+allocate_variables.cu.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\allocate_variables.cu.obj
+.PHONY : allocate_variables.cu.obj
+
+allocate_variables.i: allocate_variables.cu.i
+
+.PHONY : allocate_variables.i
+
+# target to preprocess a source file
+allocate_variables.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\allocate_variables.cu.i
+.PHONY : allocate_variables.cu.i
+
+allocate_variables.s: allocate_variables.cu.s
+
+.PHONY : allocate_variables.s
+
+# target to generate assembly for a file
+allocate_variables.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\allocate_variables.cu.s
+.PHONY : allocate_variables.cu.s
+
 main.obj: main.cu.obj
 
 .PHONY : main.obj
@@ -163,6 +190,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CudaUbuntu
+	@echo ... allocate_variables.obj
+	@echo ... allocate_variables.i
+	@echo ... allocate_variables.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CUDA
+  "D:/Travail/Projet/CudaUbuntu/allocate_variables.cu" "D:/Travail/Projet/CudaUbuntu/cmake-build-debug/CMakeFiles/CudaUbuntu.dir/allocate_variables.cu.obj"
   "D:/Travail/Projet/CudaUbuntu/main.cu" "D:/Travail/Projet/CudaUbuntu/cmake-build-debug/CMakeFiles/CudaUbuntu.dir/main.cu.obj"
   )
 set(CMAKE_CUDA_COMPILER_ID "NVIDIA")

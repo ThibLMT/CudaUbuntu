@@ -69,7 +69,10 @@
 		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_const.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_type.h">
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_global_variables.h">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_types.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>
 		<Unit filename="D:/Travail/Projet/CudaUbuntu/main.cu">

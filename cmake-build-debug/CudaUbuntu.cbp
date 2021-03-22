@@ -66,6 +66,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_const.h">
+			<Option target="CudaUbuntu"/>
+		</Unit>
 		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_type.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>

@@ -4,6 +4,7 @@
 #include "def_global_variables.h"
 #include "allocate_variables.cuh"
 #include "read_micro.cuh"
+#include "init_params.cuh"
 
 #define NB_PART 200
 #define SYSSIZEX 5
@@ -24,13 +25,13 @@ int main() {
     int iter,niter,imicro;
     char filename[50];
     discrete_elt *particle;
-    geom_sys *geom;
+    geom_struct *geom;
 
     // Initialization of Ierror
     ierror=EXIT_SUCCESS;
 
 
-    cudaMallocManaged(&geom, sizeof(geom_sys));
+    cudaMallocManaged(&geom, sizeof(geom_struct));
 
     // * Get the number of particles
     geom->nb_part = NB_PART;
@@ -50,6 +51,25 @@ int main() {
 
     microfile_read_particle(Nmicrofile,particle,geom);
     microcontfile_read_contact(Nmicrofile,particle,geom);
+
+    //********************
+    // Initialize parameters
+    // Bulk parameters
+    read_table_mat(prop_mat_part);
+
+    // Friction parameters
+    prop_mat_part->mu_gg=0.3; //!< Friction coefficient grain-grain
+    prop_mat_part->mu_gw=0.3; //!< Friction coefficient grain-wall
+    // -- Rolling resistant parameters
+    prop_mat_part->mu_roll_gg=0.01; //!< Rolling friction coefficient grain-grain
+    prop_mat_part->mu_roll_gw=0.01;
+    // Set bulk forces
+    gravity.x=0.0;
+    gravity.y=0.0;
+    gravity.z=-9.81;  // m.s-2
+
+    //adimention of length
+    adi_params(prop_mat_part,geom);
 
     // Frees allocated memory
     cudaFree(particle);

@@ -1,0 +1,67 @@
+double dist2_sphere_voxel(int xp,int yp,int zp,double xpart,double ypart,double zpart)
+  {
+  double xpsum,ypsum,zpsum;
+  double distx2,disty2,distz2,dist2;
+  // return the distance bewteen the center of the particle and the closest summit of the voxel  
+  
+  // computing the mimimun distance beatween center and the voxel
+  //printf("xpart-(double)xp %f \n",(xpart-(double)xp));
+   //printf("xpart%f xp %f\n",xpart,(double)xp);
+  if((xpart-(double)xp) > 0.5){
+          xpsum=(double)xp+0.5;printf("xpsum %f",xpsum);
+          distx2=(xpsum-xpart)*(xpsum-xpart);
+          xpsum=(double)(xp+syssizex)-0.5;
+          printf("xpsumbon %f \n",xpsum);
+          // Periodic condition for the adjacent microstructure
+          if(((xpsum-xpart)*(xpsum-xpart)) < distx2){distx2=(xpsum-xpart)*(xpsum-xpart);}
+        }
+  else if((xpart-(double)xp) < 0.5){
+         xpsum=(double)xp-0.5;printf("xpsum ",xpsum);
+          distx2=(xpsum-xpart)*(xpsum-xpart);
+          xpsum=(double)(xp-syssizex)+0.5;printf("xpsumbon %f \n",xpsum);
+          // Periodic condition for the adjacent microstructure
+          if(((xpsum-xpart)*(xpsum-xpart)) < distx2){distx2=(xpsum-xpart)*(xpsum-xpart);}
+    }
+  else{
+        distx2=0.0;
+  }
+  
+  if((ypart-(double)yp) > 0.5){
+          ypsum=(double)yp+0.5;printf("ypsumbon %f ",ypsum);
+          disty2=(ypsum-ypart)*(ypsum-ypart);
+          ypsum=(double)(yp+syssizey)-0.5;printf("ypsumbon %f \n",ypsum);
+          // Periodic condition for the adjacent microstructure
+          if(((ypsum-ypart)*(ypsum-ypart))<disty2){disty2=(ypsum-ypart)*(ypsum-ypart);}
+        }
+  else if((ypart-(double)yp) < 0.5){
+         ypsum=(double)yp-0.5;
+          disty2=(ypsum-ypart)*(ypsum-ypart); printf("ypsumb %f ",ypsum);
+          ypsum=(double)(yp-syssizey)+0.5;printf("xpsumbon %f \n",ypsum);
+          // Periodic condition for the adjacent microstructure
+          if(((ypsum-ypart)*(ypsum-ypart))<disty2){disty2=(ypsum-ypart)*(ypsum-ypart);}
+    }
+  else{
+        disty2=0.0;
+  }
+  
+  if((zpart-(double)zp) > 0.5){
+          zpsum=(double)zp+0.5;
+          distz2=(zpsum-zpart)*(zpsum-zpart);printf("zpsum %f ",zpsum);
+          zpsum=(double)(zp+syssizez)-0.5;printf("zpsumbon %f \n",zpsum);
+          // Periodic condition for the adjacent microstructure
+          if(((zpsum-zpart)*(zpsum-zpart))<distz2){distz2=(zpsum-zpart)*(zpsum-zpart);} 
+        }
+  else if((zpart-(double)zp) < 0.5){
+         zpsum=(double)zp-0.5; printf("zpsum %f",xpsum);
+          distz2=(zpsum-zpart)*(zpsum-zpart);
+          zpsum=(double)(zp-syssizez)+0.5; printf("zpsumbon %f \n",xpsum);
+          // Periodic condition for the adjacent microstructure
+          if((((zpsum-zpart)*(zpsum-zpart))<distz2)){distz2=(zpsum-zpart)*(zpsum-zpart);}
+    }
+  else{
+        distz2=0.0;
+  }
+  printf("distx2 %f disty2 %f distz2 %f",distx2,disty2,distz2);
+  dist2=distx2+disty2+distz2;
+  return dist2;
+  }

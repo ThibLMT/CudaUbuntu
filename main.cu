@@ -11,6 +11,7 @@
 #define UNITY 0.010000
 #define BOUNDARYCONT 20
 
+
 int main() {
     char Nlogfile[50]="logfile";
     char Nmicrofile[50]="init_micro";
@@ -23,6 +24,10 @@ int main() {
     char filename[50];
     discrete_elt *particle;
     geom_sys *geom;
+
+    // Initialization of Ierror
+    ierror=EXIT_SUCCESS;
+
 
     cudaMallocManaged(&geom, sizeof(geom_sys));
 
@@ -46,3 +51,4 @@ int main() {
     cudaFree(geom);
     return 0;
 }
+

@@ -3,6 +3,7 @@
 #include "def_types.h"
 #include "def_global_variables.h"
 #include "allocate_variables.cuh"
+#include "read_micro.cuh"
 
 #define NB_PART 200
 #define SYSSIZEX 5
@@ -45,6 +46,10 @@ int main() {
 
     // Sets all particle members to 0
     initialize_particle<<<numBlocks,blockSize>>>(particle,geom);
+    cudaDeviceSynchronize();
+
+    microfile_read_particle(Nmicrofile,particle,geom);
+    microcontfile_read_contact(Nmicrofile,particle,geom);
 
     // Frees allocated memory
     cudaFree(particle);

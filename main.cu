@@ -90,7 +90,7 @@ int main() {
     backgrid=allocation_backgrid(geom);
     backgrid_insert=allocation_backgrid_insert(geom);
 
-    // TODO initialize_backgrid
+    // TODO résoudre le pb des backgrid qui pointent sur NULL
 
     initialize_backgrid<<<numBlocks,blockSize>>>(backgrid,backgrid_insert,geom);
     cudaDeviceSynchronize();

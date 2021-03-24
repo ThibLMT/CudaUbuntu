@@ -9,13 +9,17 @@
 unsigned int * allocation_backgrid(geom_struct *geom)
 {
     int nb_elements;
+    unsigned int *backgrid;
     nb_elements=geom->sizex*geom->sizey*geom->sizez*geom->sizel;
-    return static_cast<unsigned int *>(malloc(nb_elements * sizeof(unsigned int)));
+    cudaMallocManaged(&backgrid,nb_elements * sizeof(unsigned int));
+    return backgrid;
 }
 
 int * allocation_backgrid_insert(geom_struct *geom)
 {
     int nb_elements;
+    int *backgrid_insert;
     nb_elements=geom->sizex*geom->sizey*geom->sizez;
-    return static_cast<int *>(malloc(nb_elements * sizeof(int)));
+    cudaMallocManaged(&backgrid_insert,nb_elements * sizeof(int));
+    return backgrid_insert;
 }

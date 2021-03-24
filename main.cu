@@ -31,7 +31,6 @@ int main() {
     // Initialization of Ierror
     ierror=EXIT_SUCCESS;
 
-
     cudaMallocManaged(&geom, sizeof(geom_struct));
 
     // * Get the number of particles

@@ -55,21 +55,27 @@ int main() {
     //********************
     // Initialize parameters
     // Bulk parameters
-    read_table_mat(prop_mat_part);
+    read_table_mat(&prop_mat_part);
 
     // Friction parameters
-    prop_mat_part->mu_gg=0.3; //!< Friction coefficient grain-grain
-    prop_mat_part->mu_gw=0.3; //!< Friction coefficient grain-wall
+    prop_mat_part.mu_gg=0.3; //!< Friction coefficient grain-grain
+    prop_mat_part.mu_gw=0.3; //!< Friction coefficient grain-wall
     // -- Rolling resistant parameters
-    prop_mat_part->mu_roll_gg=0.01; //!< Rolling friction coefficient grain-grain
-    prop_mat_part->mu_roll_gw=0.01;
+    prop_mat_part.mu_roll_gg=0.01; //!< Rolling friction coefficient grain-grain
+    prop_mat_part.mu_roll_gw=0.01;
     // Set bulk forces
     gravity.x=0.0;
     gravity.y=0.0;
     gravity.z=-9.81;  // m.s-2
 
     //adimention of length
-    adi_params(prop_mat_part,geom);
+    adi_params(&prop_mat_part,geom);
+
+    /*do{
+
+        iter++;
+    }
+    while(iter<=niter);*/
 
     // Frees allocated memory
     cudaFree(particle);

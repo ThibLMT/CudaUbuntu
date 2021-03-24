@@ -29,7 +29,7 @@ char Nobjfile[50];
 
 //
 
-material_data *prop_mat_part;
+material_data prop_mat_part;
 
 
 //

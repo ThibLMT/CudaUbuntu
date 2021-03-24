@@ -5,6 +5,7 @@
 #include "allocate_variables.cuh"
 #include "read_micro.cuh"
 #include "init_params.cuh"
+#include "sub_domain.cuh"
 
 #define NB_PART 200
 #define SYSSIZEX 5
@@ -75,6 +76,29 @@ int main() {
     {
         give_properties_particle(&particle[i],geom->unity,prop_mat_part);
     }
+
+    // set parameter for the plane
+    i=geom->nb_part+1;
+    give_properties_particle(&particle[i],geom->unity,prop_mat_part);
+    particle[i].radius=1000000.0;
+    particle[i].Ri.x=geom->sizex/2.0;
+    particle[i].Ri.y=geom->sizey/2.0;
+    particle[i].Ri.z=0.0 + -1.0 * particle[i].radius;
+
+
+    // Start DEM computation
+    // Allocation of subdomain backgrid
+    backgrid=allocation_backgrid(geom);
+    backgrid_insert=allocation_backgrid_insert(geom);
+
+    // TODO initialize_backgrid
+
+
+
+    geom->deltat=0.000001;
+    niter=1000000;
+    imicro=0;
+    iter=0;
 
     do{
 

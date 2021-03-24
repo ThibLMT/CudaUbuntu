@@ -55,3 +55,24 @@ __global__ void initialize_particle(discrete_elt *particle, geom_struct *geom)
     }
 
 }
+void give_properties_particle(discrete_elt *particle,double unity,material_data properties)
+{
+    double radius;
+    double mass;
+    discrete_elt particle_i;
+    // Mass of particle (Kg)
+
+    particle_i=*particle;
+    radius=particle_i.radius;
+    mass=4.0/3.0*PI*radius*radius*radius*properties.density;
+    particle_i.mass=mass;
+    // Internia of particle (Kg.m2)
+    particle_i.inertia=2.0/5.0*mass*radius*radius*unity*unity;
+    // Elastic properties
+    particle_i.Yn=properties.E;
+    particle_i.Nu=properties.nu;
+    particle_i.Ndamp=properties.cn;
+    particle_i.Mu=properties.mu_gg;
+    particle_i.Mur=properties.mu_roll_gg;
+    *particle=particle_i;
+}

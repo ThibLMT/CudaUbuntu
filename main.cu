@@ -70,12 +70,17 @@ int main() {
 
     //adimention of length
     adi_params(&prop_mat_part,geom);
+    // give properties for particle
+    for(i=1;i<=geom->nb_part;i++)
+    {
+        give_properties_particle(&particle[i],geom->unity,prop_mat_part);
+    }
 
-    /*do{
+    do{
 
         iter++;
     }
-    while(iter<=niter);*/
+    while(iter<=niter);
 
     // Frees allocated memory
     cudaFree(particle);

@@ -92,7 +92,8 @@ int main() {
 
     // TODO initialize_backgrid
 
-
+    initialize_backgrid<<<numBlocks,blockSize>>>(backgrid,backgrid_insert,geom);
+    cudaDeviceSynchronize();
 
     geom->deltat=0.000001;
     niter=1000000;

@@ -55,8 +55,6 @@ unsigned int ***mic_insert, ***mic_insert_boundary;
 unsigned int *tab_mic;
 unsigned int *tab_mic_insert;
 
-unsigned int *backgrid;
-int *backgrid_insert;
 
 
 // Utiliser pour récupérer les identifiants, structure pas adéquat à changer

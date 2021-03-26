@@ -27,6 +27,8 @@ int main() {
     char filename[50];
     discrete_elt *particle;
     geom_struct *geom;
+    unsigned int *backgrid = nullptr;
+    int *backgrid_insert = nullptr;
 
     // Initialization of Ierror
     ierror=EXIT_SUCCESS;
@@ -37,6 +39,7 @@ int main() {
     geom->nb_part = NB_PART;
     // * Get the number of boundary contacts
     geom->nb_bc = BOUNDARYCONT;
+    read_geom_param(geom);
 
     // Allocate the particle array
     int nb_elements = geom->nb_part + geom->nb_bc + 1;
@@ -87,14 +90,16 @@ int main() {
 
     // Start DEM computation
     // Allocation of subdomain backgrid
-    backgrid=allocation_backgrid(geom);
-    backgrid_insert=allocation_backgrid_insert(geom);
+    nb_elements=geom->sizex*geom->sizey*geom->sizez*geom->sizel;
+    cudaMallocManaged(&backgrid,nb_elements * sizeof(backgrid));
+    nb_elements=geom->sizex*geom->sizey*geom->sizez;
+    cudaMallocManaged(&backgrid_insert,nb_elements * sizeof(backgrid_insert));
 
-    // TODO résoudre le pb des backgrid qui pointent sur NULL
 
     initialize_backgrid<<<numBlocks,blockSize>>>(backgrid,backgrid_insert,geom);
     cudaDeviceSynchronize();
 
+    // TODO set_id_backgrid
     geom->deltat=0.000001;
     niter=1000000;
     imicro=0;

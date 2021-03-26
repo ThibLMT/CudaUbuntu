@@ -8,8 +8,6 @@
 #ifndef CUDAUBUNTU_SUB_DOMAIN_CUH
 #define CUDAUBUNTU_SUB_DOMAIN_CUH
 
-unsigned int * allocation_backgrid(geom_struct *geom);
-int * allocation_backgrid_insert(geom_struct *geom);
 __global__ void initialize_backgrid(unsigned int *backgrid,int *backgrid_insert,geom_struct *geom);
 
 #endif //CUDAUBUNTU_SUB_DOMAIN_CUH

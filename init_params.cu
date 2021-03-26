@@ -4,6 +4,40 @@
 
 #include "init_params.cuh"
 
+void read_geom_param(geom_struct *geom_para)
+{
+    geom_struct geom_para_read;
+    char **tab_char;  //!< array of string
+    int i,k,nstring;
+    // Initialization and allocation
+    geom_para_read=*geom_para;
+    tab_char= static_cast<char **>(malloc(50 * sizeof(char *)));
+    for(i=0;i<50;i++) {tab_char[i]= static_cast<char *>(malloc(256 * sizeof(char)));}
+    // Read string "tab_mat" and grep info
+
+    nstring=get_line_char("syssize",tab_char);
+
+    // Read syssize of the system alon x,y,z, define the limit poistion and the dimension of the box simulation and the sud domain backgrid
+    for(k=0;k<nstring;k++)
+    {
+        if (!strcmp ((const char *) tab_char[k], "syssize"))
+        {
+            geom_para_read.sizex = atoi (tab_char[k + 1]);
+            geom_para_read.sizey = atoi (tab_char[k + 2]);
+            geom_para_read.sizez = atoi (tab_char[k + 3]);
+            break;
+        }
+    }
+    // Read size of the system along l (max number of particles can be put in each voxel of backgrid)
+    nstring=get_line_char("syssize_l",tab_char);
+    if (!strcmp ((const char *) tab_char[0], "syssize_l")) {geom_para_read.sizel = atoi (tab_char[1]);}
+
+    // Read unity length Conversion
+    nstring=get_line_char("unity",tab_char);
+    if (!strcmp ((const char *) tab_char[0], "unity")) {geom_para_read.unity = atof (tab_char[1]);}
+    *geom_para=geom_para_read;
+}
+
 void adi_params(material_data *prop_mat_part,geom_struct *geom)
 {
     material_data tab_mat;

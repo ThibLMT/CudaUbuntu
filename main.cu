@@ -100,6 +100,15 @@ int main() {
     cudaDeviceSynchronize();
 
     // TODO set_id_backgrid
+    for(i=0;i<geom.sizex;i++)
+    {
+        for(j=0;j<geom.sizey;j++)
+        {
+            //set_id_backgrid(i,j,0,geom.nb_part+1,backgrid,backgrid_insert,geom);
+        }
+
+    }
+
     geom->deltat=0.000001;
     niter=1000000;
     imicro=0;

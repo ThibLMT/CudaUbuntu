@@ -1,4 +1,0 @@
-"E:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\Travail\Projet\CudaUbuntu
--- Configuring done
--- Generating done
--- Build files have been written to: D:/Travail/Projet/CudaUbuntu/cmake-build-debug

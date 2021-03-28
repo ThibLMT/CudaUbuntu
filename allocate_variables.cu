@@ -84,7 +84,7 @@ __global__ void set_forces_0(discrete_elt *particle,geom_struct *geom)
     int stride = blockDim.x * gridDim.x;
     for (int i = index; i < nelement; i+= stride)
     {
-        particle[i].Fi.x=50.0;   // vector
+        particle[i].Fi.x=0.0;   // vector
         particle[i].Fi.y=0.0;
         particle[i].Fi.z=0.0;
         particle[i].Mi.x=0.0;		// vector

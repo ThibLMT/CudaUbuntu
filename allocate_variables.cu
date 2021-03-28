@@ -76,3 +76,19 @@ void give_properties_particle(discrete_elt *particle,double unity,material_data 
     particle_i.Mur=properties.mu_roll_gg;
     *particle=particle_i;
 }
+
+__global__ void set_forces_0(discrete_elt *particle,geom_struct *geom)
+{
+    unsigned int nelement=geom->nb_part+geom->nb_bc; //!< Number of elements of particle arrays
+    int index = blockIdx.x * blockDim.x + threadIdx.x;
+    int stride = blockDim.x * gridDim.x;
+    for (int i = index; i < nelement; i+= stride)
+    {
+        particle[i].Fi.x=50.0;   // vector
+        particle[i].Fi.y=0.0;
+        particle[i].Fi.z=0.0;
+        particle[i].Mi.x=0.0;		// vector
+        particle[i].Mi.x=0.0;
+        particle[i].Mi.x=0.0;
+    }
+}

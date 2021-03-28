@@ -24,3 +24,14 @@ __global__ void initialize_backgrid(unsigned int *backgrid,int *backgrid_insert,
         backgrid[i] = 0;
     }
 }
+
+void set_id_backgrid(int xv,int yv,int zv,unsigned int idp,unsigned int *backgrid, int *backgrid_insert,geom_struct *geom)
+{
+    int index_backgrid,index_backgrid_insert,lv;
+    // Keep the last position lv
+    index_backgrid_insert=zv+yv*geom->sizez+xv*geom->sizez*geom->sizey;
+    lv=backgrid_insert[index_backgrid_insert];
+    index_backgrid=lv+zv*geom->sizel+yv*geom->sizel*geom->sizez+xv*geom->sizel*geom->sizez*geom->sizey;
+    backgrid[index_backgrid]=idp;
+    backgrid_insert[index_backgrid_insert]++;
+}

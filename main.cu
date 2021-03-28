@@ -99,12 +99,11 @@ int main() {
     initialize_backgrid<<<numBlocks,blockSize>>>(backgrid,backgrid_insert,geom);
     cudaDeviceSynchronize();
 
-    // TODO set_id_backgrid
-    for(i=0;i<geom.sizex;i++)
+    for(i=0;i<geom->sizex;i++)
     {
-        for(j=0;j<geom.sizey;j++)
+        for(j=0;j<geom->sizey;j++)
         {
-            //set_id_backgrid(i,j,0,geom.nb_part+1,backgrid,backgrid_insert,geom);
+            set_id_backgrid(i,j,0,geom->nb_part+1,backgrid,backgrid_insert,geom);
         }
 
     }
@@ -115,6 +114,9 @@ int main() {
     iter=0;
 
     do{
+        // Reset the forces and moments on the particles
+        set_forces_0<<<numBlocks,blockSize>>>(particle,geom);
+
 
         iter++;
     }

@@ -81,6 +81,7 @@ int main() {
 
     // set parameter for the plane
     i=geom->nb_part+1;
+    //TODO refaire l'implémentation de give_properties_particle
     give_properties_particle(&particle[i],geom->unity,prop_mat_part);
     particle[i].radius=1000000.0;
     particle[i].Ri.x=geom->sizex/2.0;
@@ -116,6 +117,11 @@ int main() {
     do{
         // Reset the forces and moments on the particles
         set_forces_0<<<numBlocks,blockSize>>>(particle,geom);
+        cudaDeviceSynchronize();
+
+        // Apply gravity
+        apply_gravity<<<numBlocks,blockSize>>>(particle,geom,gravity);
+        cudaDeviceSynchronize();
 
 
         iter++;

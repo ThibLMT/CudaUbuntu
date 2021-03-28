@@ -92,3 +92,17 @@ __global__ void set_forces_0(discrete_elt *particle,geom_struct *geom)
         particle[i].Mi.x=0.0;
     }
 }
+
+__global__ void apply_gravity(discrete_elt *particle,geom_struct *geom,vect gravity)
+{
+    unsigned int nelement=geom->nb_part; //!< Number of elements of particle arrays
+    int index = blockIdx.x * blockDim.x + threadIdx.x;
+    int stride = blockDim.x * gridDim.x;
+    for (int i = index; i < nelement; i+= stride)
+    {
+        // Gravity force
+        particle[i].Fi.x+=gravity.x*particle[i].mass;
+        particle[i].Fi.y+=gravity.y*particle[i].mass;
+        particle[i].Fi.z+=gravity.z*particle[i].mass;
+    }
+}

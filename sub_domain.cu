@@ -166,7 +166,8 @@ __global__ void insert_sph_backgrid(discrete_elt *particle,unsigned int *backgri
                         index_insert = zp + yp * syssizez + xp * syssizez * syssizey;
                         // Perte d'identifiants de particules au bout de 100000 itérations  race data sur le tableau backgrid_insert
 
-                        atomicAdd(&lp, backgrid_insert[index_insert]++);
+                        atomicAdd(&backgrid_insert[index_insert], 1);
+                        atomicAdd(&lp, backgrid_insert[index_insert]);
 
                         lp--;
 

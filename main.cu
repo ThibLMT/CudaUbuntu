@@ -81,7 +81,6 @@ int main() {
 
     // set parameter for the plane
     i=geom->nb_part+1;
-    //TODO refaire l'implémentation de give_properties_particle
     give_properties_particle(&particle[i],geom->unity,prop_mat_part);
     particle[i].radius=1000000.0;
     particle[i].Ri.x=geom->sizex/2.0;

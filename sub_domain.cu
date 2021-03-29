@@ -54,11 +54,11 @@ __global__ void insert_sph_backgrid(discrete_elt *particle,unsigned int *backgri
 
     lp = 0;
     cont = 0;
-    for (int loopI = index; loopI < geom->nb_part; loopI+= stride) {
-        double xpart = particle[loopI].Ri.x;
-        double ypart = particle[loopI].Ri.y;
-        double zpart = particle[loopI].Ri.z;
-        double radpart = particle[loopI].radius;
+    for (int idpart = index; idpart< geom->nb_part; idpart+= stride) {
+        double xpart = particle[idpart].Ri.x;
+        double ypart = particle[idpart].Ri.y;
+        double zpart = particle[idpart].Ri.z;
+        double radpart = particle[idpart].radius;
         /* identification of the pixels that have to be scanned */
         /* xp,yp,zp are located in the middle of the pixel */
         /* if the double position is greater than xp.5 the pixel */
@@ -168,12 +168,10 @@ __global__ void insert_sph_backgrid(discrete_elt *particle,unsigned int *backgri
                         // Perte d'identifiants de particules au bout de 100000 itérations  race data sur le tableau backgrid_insert
 
                         lp=++backgrid_insert[index_insert];
-
                         lp--;
 
-
                         index_backgrid = lp + zp * syssizel + yp * syssizel * syssizez + xp * syssizel * syssizez * syssizey;
-                        backgrid[index_backgrid] = loopI;
+                        backgrid[index_backgrid] = idpart;
 
 
 

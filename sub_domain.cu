@@ -171,8 +171,7 @@ __global__ void insert_sph_backgrid(discrete_elt *particle,unsigned int *backgri
                         lp--;
 
 
-                        index_backgrid =
-                                lp + zp * syssizel + yp * syssizel * syssizez + xp * syssizel * syssizez * syssizey;
+                        index_backgrid = lp + zp * syssizel + yp * syssizel * syssizez + xp * syssizel * syssizez * syssizey;
                         backgrid[index_backgrid] = loopI;
 
 

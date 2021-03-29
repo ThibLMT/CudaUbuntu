@@ -43,19 +43,19 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "E:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Informatique\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "E:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Informatique\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Travail\Projet\CudaUbuntu
+CMAKE_SOURCE_DIR = C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Travail\Projet\CudaUbuntu\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = D:\Travail\Projet\CudaUbuntu\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	echo >nul && "E:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	echo >nul && "C:\Informatique\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -74,7 +74,7 @@ edit_cache\fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	echo >nul && "E:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	echo >nul && "C:\Informatique\CLion\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -84,9 +84,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Travail\Projet\CudaUbuntu\cmake-build-debug\CMakeFiles D:\Travail\Projet\CudaUbuntu\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\CMakeFiles C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Travail\Projet\CudaUbuntu\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -154,6 +154,33 @@ allocate_variables.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\allocate_variables.cu.s
 .PHONY : allocate_variables.cu.s
 
+init_params.obj: init_params.cu.obj
+
+.PHONY : init_params.obj
+
+# target to build an object file
+init_params.cu.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\init_params.cu.obj
+.PHONY : init_params.cu.obj
+
+init_params.i: init_params.cu.i
+
+.PHONY : init_params.i
+
+# target to preprocess a source file
+init_params.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\init_params.cu.i
+.PHONY : init_params.cu.i
+
+init_params.s: init_params.cu.s
+
+.PHONY : init_params.s
+
+# target to generate assembly for a file
+init_params.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\init_params.cu.s
+.PHONY : init_params.cu.s
+
 main.obj: main.cu.obj
 
 .PHONY : main.obj
@@ -181,6 +208,60 @@ main.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\main.cu.s
 .PHONY : main.cu.s
 
+read_micro.obj: read_micro.cu.obj
+
+.PHONY : read_micro.obj
+
+# target to build an object file
+read_micro.cu.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\read_micro.cu.obj
+.PHONY : read_micro.cu.obj
+
+read_micro.i: read_micro.cu.i
+
+.PHONY : read_micro.i
+
+# target to preprocess a source file
+read_micro.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\read_micro.cu.i
+.PHONY : read_micro.cu.i
+
+read_micro.s: read_micro.cu.s
+
+.PHONY : read_micro.s
+
+# target to generate assembly for a file
+read_micro.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\read_micro.cu.s
+.PHONY : read_micro.cu.s
+
+sub_domain.obj: sub_domain.cu.obj
+
+.PHONY : sub_domain.obj
+
+# target to build an object file
+sub_domain.cu.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\sub_domain.cu.obj
+.PHONY : sub_domain.cu.obj
+
+sub_domain.i: sub_domain.cu.i
+
+.PHONY : sub_domain.i
+
+# target to preprocess a source file
+sub_domain.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\sub_domain.cu.i
+.PHONY : sub_domain.cu.i
+
+sub_domain.s: sub_domain.cu.s
+
+.PHONY : sub_domain.s
+
+# target to generate assembly for a file
+sub_domain.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CudaUbuntu.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CudaUbuntu.dir\sub_domain.cu.s
+.PHONY : sub_domain.cu.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -193,9 +274,18 @@ help:
 	@echo ... allocate_variables.obj
 	@echo ... allocate_variables.i
 	@echo ... allocate_variables.s
+	@echo ... init_params.obj
+	@echo ... init_params.i
+	@echo ... init_params.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... read_micro.obj
+	@echo ... read_micro.i
+	@echo ... read_micro.s
+	@echo ... sub_domain.obj
+	@echo ... sub_domain.i
+	@echo ... sub_domain.s
 .PHONY : help
 
 

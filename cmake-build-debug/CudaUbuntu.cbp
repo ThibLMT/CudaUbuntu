@@ -8,83 +8,101 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option working_dir="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CudaUbuntu">
-				<Option output="D:/Travail/Projet/CudaUbuntu/cmake-build-debug/CudaUbuntu.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option output="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug/CudaUbuntu.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 CudaUbuntu"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 CudaUbuntu"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CudaUbuntu/fast">
-				<Option output="D:/Travail/Projet/CudaUbuntu/cmake-build-debug/CudaUbuntu.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option output="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug/CudaUbuntu.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 CudaUbuntu/fast"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 CudaUbuntu/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option working_dir="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Travail/Projet/CudaUbuntu/cmake-build-debug"/>
+				<Option working_dir="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Travail\Projet\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Informatique\GIT_PROJET_CUDA\CudaUbuntu\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/allocate_variables.cu">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/allocate_variables.cu">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/allocate_variables.cuh">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/allocate_variables.cuh">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_const.h">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/def_const.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_global_variables.h">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/def_global_variables.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/def_types.h">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/def_types.h">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/main.cu">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/init_params.cu">
 			<Option target="CudaUbuntu"/>
 		</Unit>
-		<Unit filename="D:/Travail/Projet/CudaUbuntu/CMakeLists.txt">
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/init_params.cuh">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/main.cu">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/read_micro.cu">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/read_micro.cuh">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/sub_domain.cu">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/sub_domain.cuh">
+			<Option target="CudaUbuntu"/>
+		</Unit>
+		<Unit filename="C:/Informatique/GIT_PROJET_CUDA/CudaUbuntu/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

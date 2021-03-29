@@ -109,7 +109,7 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=100000;
+    niter=90000;
     imicro=0;
     iter=0;
 

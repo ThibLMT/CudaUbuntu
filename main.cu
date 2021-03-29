@@ -122,7 +122,9 @@ int main() {
         apply_gravity<<<numBlocks,blockSize>>>(particle,geom,gravity);
         cudaDeviceSynchronize();
 
+        // Insert the spheres in the background
         insert_sph_backgrid<<<numBlocks,blockSize>>>(particle,backgrid,backgrid_insert,geom);
+        cudaDeviceSynchronize();
         iter++;
     }
     while(iter<=niter);

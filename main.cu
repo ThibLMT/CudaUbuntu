@@ -122,7 +122,7 @@ int main() {
         apply_gravity<<<numBlocks,blockSize>>>(particle,geom,gravity);
         cudaDeviceSynchronize();
 
-
+        insert_sph_backgrid<<<numBlocks,blockSize>>>(particle,backgrid,backgrid_insert,geom);
         iter++;
     }
     while(iter<=niter);
@@ -130,6 +130,8 @@ int main() {
     // Frees allocated memory
     cudaFree(particle);
     cudaFree(geom);
+    cudaFree(backgrid);
+    cudaFree(backgrid_insert);
     return 0;
 }
 

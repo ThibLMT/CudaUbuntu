@@ -124,7 +124,7 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=1000000;
+    niter=100000;
     imicro=0;
     iter=0;
     microfile_write("micro_ini",particle,geom);
@@ -150,6 +150,20 @@ int main() {
             imicro++;
         }
 
+        update_particle<<<numBlocks,blockSize>>>(particle,geom);
+        cudaDeviceSynchronize();
+
+        memset(backgrid,0,geom->sizex*geom->sizey*geom->sizez*geom->sizel*sizeof(unsigned int));
+        memset(backgrid_insert,0,geom->sizex*geom->sizey*geom->sizez*sizeof(int));
+
+        for(i=0;i<geom->sizex;i++)
+        {
+            for(j=0;j<geom->sizey;j++)
+            {
+                set_id_backgrid(i,j,0,geom->nb_part+1,backgrid,backgrid_insert,geom);
+            }
+
+        }
         iter++;
     }
     while(iter<=niter);

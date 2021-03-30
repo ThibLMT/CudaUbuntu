@@ -124,7 +124,7 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=100000;
+    niter=10000;
     imicro=0;
     iter=0;
     microfile_write("micro_ini",particle,geom);

@@ -25,7 +25,7 @@ __global__ void initialize_backgrid(unsigned int *backgrid,int *backgrid_insert,
     }
 }
 
-void set_id_backgrid(int xv,int yv,int zv,unsigned int idp,unsigned int *backgrid, int *backgrid_insert,geom_struct *geom)
+__host__ void set_id_backgrid(int xv,int yv,int zv,unsigned int idp,unsigned int *backgrid, int *backgrid_insert,geom_struct *geom)
 {
     int index_backgrid,index_backgrid_insert,lv;
     // Keep the last position lv

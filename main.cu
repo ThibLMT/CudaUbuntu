@@ -6,6 +6,7 @@
 #include "read_micro.cuh"
 #include "init_params.cuh"
 #include "sub_domain.cuh"
+#include "write_micro.cuh"
 
 #define NB_PART 200
 #define SYSSIZEX 5
@@ -32,6 +33,20 @@ int main() {
 
     // Initialization of Ierror
     ierror=EXIT_SUCCESS;
+
+    // Open first the log file (history of simulation)
+    flogfile=fopen(Nlogfile,"w");
+    // Test the logfile
+    if(flogfile != NULL)
+    {
+        fprintf(flogfile,"***********************************\n");
+        fprintf(flogfile,"* demGCE code : log file \n");
+    }
+    else
+    {
+        perror(Nlogfile);
+        exit(ierror=errno);
+    }
 
     cudaMallocManaged(&geom, sizeof(geom_struct));
 
@@ -109,9 +124,10 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=10000;
+    niter=1000000;
     imicro=0;
     iter=0;
+    microfile_write("micro_ini",particle,geom);
 
     do{
         // Reset the forces and moments on the particles
@@ -125,6 +141,15 @@ int main() {
         // Insert the spheres in the background
         insert_sph_backgrid<<<numBlocks,blockSize>>>(particle,backgrid,backgrid_insert,geom);
         cudaDeviceSynchronize();
+
+        if(iter%100000==0)
+        {
+            sprintf(filename,"micro_%04d",imicro);
+            printf("micro iter %d %d \n",iter,imicro);
+            microfile_write(filename,particle,geom);
+            imicro++;
+        }
+
         iter++;
     }
     while(iter<=niter);

@@ -124,13 +124,13 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=10000;
+    niter=50000;
     imicro=0;
     iter=0;
     microfile_write("micro_ini",particle,geom);
 
     do{
-        if(iter%100000==0)
+        if(iter%10000==0)
         {
             sprintf(filename,"micro_%04d",imicro);
             printf("micro iter %d %d \n",iter,imicro);
@@ -149,6 +149,8 @@ int main() {
         // Insert the spheres in the background
         insert_sph_backgrid<<<numBlocks,blockSize>>>(particle,backgrid,backgrid_insert,geom);
         cudaDeviceSynchronize();
+
+
 
         update_particle<<<numBlocks,blockSize>>>(particle,geom);
         cudaDeviceSynchronize();

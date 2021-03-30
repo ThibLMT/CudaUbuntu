@@ -130,6 +130,14 @@ int main() {
     microfile_write("micro_ini",particle,geom);
 
     do{
+        if(iter%100000==0)
+        {
+            sprintf(filename,"micro_%04d",imicro);
+            printf("micro iter %d %d \n",iter,imicro);
+            microfile_write(filename,particle,geom);
+            imicro++;
+        }
+
         // Reset the forces and moments on the particles
         set_forces_0<<<numBlocks,blockSize>>>(particle,geom);
         cudaDeviceSynchronize();
@@ -141,14 +149,6 @@ int main() {
         // Insert the spheres in the background
         insert_sph_backgrid<<<numBlocks,blockSize>>>(particle,backgrid,backgrid_insert,geom);
         cudaDeviceSynchronize();
-
-        if(iter%100000==0)
-        {
-            sprintf(filename,"micro_%04d",imicro);
-            printf("micro iter %d %d \n",iter,imicro);
-            microfile_write(filename,particle,geom);
-            imicro++;
-        }
 
         update_particle<<<numBlocks,blockSize>>>(particle,geom);
         cudaDeviceSynchronize();

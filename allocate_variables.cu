@@ -3,6 +3,7 @@
 //
 
 #include "allocate_variables.cuh"
+#include "Lock.cuh"
 
 __global__ void initialize_particle(discrete_elt *particle, geom_struct *geom) {
     unsigned int nelement = geom->nb_part + geom->nb_bc; //!< Number of elements of particle arrays

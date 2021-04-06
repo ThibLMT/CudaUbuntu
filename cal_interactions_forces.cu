@@ -72,7 +72,7 @@ __global__ void cal_interaction_forces(int idparti,discrete_elt *particle,geom_s
         // mark the id of new contact as negative number to keep the contact in the second loop
         if(test_new_contact){particle[idparti].contact[icontact]=-idpartj;}
         // Compute interaction force between parti and partj
-        particle_interactions(idparti,idpartj,icontact,&(forceji),&(torqueji),particle,geom);
+        //!< particle_interactions(idparti,idpartj,icontact,&(forceji),&(torqueji),particle,geom);
 
         // adpate the sum Fext->i
         particle[idparti].Fi.x+=forceji.x;

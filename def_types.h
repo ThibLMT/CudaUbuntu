@@ -10,6 +10,7 @@
 
 #include "def_const.h"
 #include <stdbool.h>
+#include "Lock.cuh"
 
 
 // Type definitions
@@ -65,6 +66,7 @@ typedef struct sphere     //!< data structure used for the description of spheri
     double ut[MAXCONT];				//!< cumulated tangential displacement at contact point (scalar)
     vector ftanold[MAXCONT];		//!< Tangential force  at contact point at the previous time step
     vector nijold[MAXCONT];			//!< Normal direction  at contact point at the previous time step
+    Lock lock;
 } discrete_elt;
 
 typedef struct mat     //!< Material parameter

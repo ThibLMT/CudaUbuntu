@@ -17,7 +17,7 @@
 //#include "dlvo_forces.cuh"
 #include "tangential_force_mindlin_vect.cuh"
 #include "small_vect_rot.cuh"
-#include "rolling_resistance_torque.cuh"
+//#include "rolling_resistance_torque.cuh"
 #include  "normal_force_hertz.cuh"
 
 __device__ void set_vect_0(vector *vec)

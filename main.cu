@@ -132,7 +132,7 @@ int main() {
     microfile_write("micro_ini",particle,geom);
 
     do{
-        if(iter%10000==0)
+        if(iter%1000==0)
         {
             sprintf(filename,"micro_%04d",imicro);
             printf("micro iter %d %d \n",iter,imicro);
@@ -140,10 +140,6 @@ int main() {
             imicro++;
         }
 
-        /*if(iter == 4256)
-        {
-            bool bon = TRUE;
-        }*/
         // Reset the forces and moments on the particles
         set_forces_0<<<numBlocks,blockSize>>>(particle,geom);
         cudaDeviceSynchronize();

@@ -28,7 +28,7 @@ __device__ void set_vect_0(vector *vec)
 }
 // Using these following interaction force described in main.c for the moment. The other are declared in list header files
 
-__global__ void particle_interactions(unsigned int ni,unsigned int nj,int k_ij,vector* forceji_pointer,vector* torqueji_pointer,discrete_elt *particle,geom_struct geom)
+__device__ void particle_interactions(unsigned int ni,unsigned int nj,int k_ij,vector* forceji_pointer,vector* torqueji_pointer,discrete_elt *particle,geom_struct geom)
 /* Calls: no other routines */
 /* Called by: integrate() */
 {

@@ -29,7 +29,7 @@ __global__ void cal_interaction_forces(discrete_elt *particle,geom_struct *geom,
     unsigned int *list_part;
     vector forceji,torqueji;
     Flag test_contact,test_new_contact;
-    for (int idparti = index; idparti <= geom->nb_part; idparti += stride) {
+    for (int idparti = index + 1; idparti <= geom->nb_part; idparti += stride) {
 
 
         radpart = particle[idparti].radius;

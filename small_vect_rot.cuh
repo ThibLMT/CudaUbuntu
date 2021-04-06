@@ -1,0 +1,8 @@
+//
+// Created by bluet on 06/04/2021.
+//
+
+#ifndef CUDAUBUNTU_SMALL_VECT_ROT_CUH
+#define CUDAUBUNTU_SMALL_VECT_ROT_CUH
+
+#endif //CUDAUBUNTU_SMALL_VECT_ROT_CUH

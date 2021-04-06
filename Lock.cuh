@@ -5,15 +5,6 @@
 #ifndef CUDAUBUNTU_LOCK_CUH
 #define CUDAUBUNTU_LOCK_CUH
 
-#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
-inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
-{
-    if (code != cudaSuccess)
-    {
-        fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
-        if (abort) exit(code);
-    }
-}
 
 struct Lock {
 
@@ -22,13 +13,13 @@ struct Lock {
     // --- Constructor
     Lock(void) {
         int h_state = 0;                                        // --- Host side lock state initializer
-        gpuErrchk(cudaMalloc((void **)&d_state, sizeof(int)));  // --- Allocate device side lock state
-        gpuErrchk(cudaMemcpy(d_state, &h_state, sizeof(int), cudaMemcpyHostToDevice)); // --- Initialize device side lock state
+        cudaMalloc((void **)&d_state, sizeof(int));  // --- Allocate device side lock state
+        cudaMemcpy(d_state, &h_state, sizeof(int), cudaMemcpyHostToDevice); // --- Initialize device side lock state
     }
 
     // --- Destructor
     __host__ __device__ ~Lock(void) {
-        gpuErrchk(cudaFree(d_state));
+        cudaFree(d_state);
     }
 
     // --- Lock function

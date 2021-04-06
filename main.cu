@@ -126,13 +126,13 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=50000;
+    niter=100000;
     imicro=0;
     iter=0;
     microfile_write("micro_ini",particle,geom);
 
     do{
-        if(iter%1000==0)
+        if(iter%10000==0)
         {
             sprintf(filename,"micro_%04d",imicro);
             printf("micro iter %d %d \n",iter,imicro);

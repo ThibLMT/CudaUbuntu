@@ -8,6 +8,7 @@
 #include "sub_domain.cuh"
 #include "write_micro.cuh"
 #include "Lock.cuh"
+#include "cal_interactions_forces.cuh"
 
 #define NB_PART 200
 #define SYSSIZEX 5
@@ -151,7 +152,8 @@ int main() {
         insert_sph_backgrid<<<numBlocks,blockSize>>>(particle,backgrid,backgrid_insert,geom);
         cudaDeviceSynchronize();
 
-
+        cal_interaction_forces<<<numBlocks,blockSize>>>(particle, geom, backgrid);
+        cudaDeviceSynchronize();
 
         update_particle<<<numBlocks,blockSize>>>(particle,geom);
         cudaDeviceSynchronize();

@@ -80,7 +80,7 @@ __global__ void set_forces_0(discrete_elt *particle, geom_struct *geom) {
     unsigned int nelement = geom->nb_part + geom->nb_bc;
     int index = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = blockDim.x * gridDim.x;
-    for (int i = index; i < nelement; i += stride) {
+    for (int i = index; i <= nelement; i += stride) {
         particle[i].Fi.x = 0.0;   // vector
         particle[i].Fi.y = 0.0;
         particle[i].Fi.z = 0.0;
@@ -94,7 +94,7 @@ __global__ void apply_gravity(discrete_elt *particle, geom_struct *geom, vect gr
     unsigned int nelement = geom->nb_part;
     int index = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = blockDim.x * gridDim.x;
-    for (int i = index; i < nelement; i += stride) {
+    for (int i = index; i <= nelement; i += stride) {
         // Gravity force
         particle[i].Fi.x += gravity.x * particle[i].mass;
         particle[i].Fi.y += gravity.y * particle[i].mass;
@@ -106,7 +106,7 @@ __global__ void update_particle(discrete_elt *particle, geom_struct *geom) {
     unsigned int nelement = geom->nb_part;
     int index = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = blockDim.x * gridDim.x;
-    for (int i = index; i < nelement; i += stride) {
+    for (int i = index; i <= nelement; i += stride) {
         double deltat;
         deltat = geom->deltat;
         //**********

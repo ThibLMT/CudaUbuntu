@@ -61,7 +61,7 @@ __global__ void insert_sph_backgrid(discrete_elt *particle,unsigned int *backgri
 
     lp = 0;
     cont = 0;
-    for (int idpart = index; idpart< geom->nb_part; idpart+= stride) {
+    for (int idpart = index; idpart <= geom->nb_part; idpart+= stride) {
         double xpart = particle[idpart].Ri.x;
         double ypart = particle[idpart].Ri.y;
         double zpart = particle[idpart].Ri.z;

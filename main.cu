@@ -140,6 +140,10 @@ int main() {
             imicro++;
         }
 
+        if(iter == 4256)
+        {
+            bool bon = TRUE;
+        }
         // Reset the forces and moments on the particles
         set_forces_0<<<numBlocks,blockSize>>>(particle,geom);
         cudaDeviceSynchronize();

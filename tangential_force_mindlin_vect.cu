@@ -11,7 +11,7 @@
 #include "def_global_variables.h"
 #include "tangential_force_mindlin_vect.cuh"
 
-vector tangential_force_mindlin_vect(double deltanl,double fnijl,double mul, double Rij, double Gijl,vector ftan,vector vtanrel,double deltat)
+__device__ vector tangential_force_mindlin_vect(double deltanl,double fnijl,double mul, double Rij, double Gijl,vector ftan,vector vtanrel,double deltat)
 {
     double kstiff;
     double fcoulomb;

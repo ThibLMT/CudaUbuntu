@@ -86,8 +86,8 @@ __global__ void cal_interaction_forces(int idparti,discrete_elt *particle,geom_s
         // Add the balanced force for boundary conditions
         //if(idpartj>geom.nb_part){printf("i %d j %d f %e %e %f \n",idparti,idpartj,forceji.x,forceji.y,forceji.z);}
         if(idpartj>geom->nb_part)
-        // TODO implement critical part avec les locks
         {
+            particle[idpartj].lock.lock();
             particle[idpartj].Fi.x-=forceji.x;
             particle[idpartj].Fi.y-=forceji.y;
             particle[idpartj].Fi.z-=forceji.z;
@@ -95,6 +95,7 @@ __global__ void cal_interaction_forces(int idparti,discrete_elt *particle,geom_s
             particle[idpartj].Mi.x+=torqueji.x;
             particle[idpartj].Mi.y+=torqueji.y;
             particle[idpartj].Mi.z+=torqueji.z;
+            particle[idpartj].lock.unlock();
         }
     }
     free(list_part);

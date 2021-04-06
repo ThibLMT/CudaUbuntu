@@ -5,6 +5,7 @@
 #include "cal_interactions_forces.cuh"
 #include "particle_interactions.cuh"
 #include "sub_domain.cuh"
+#include "Lock.cuh"
 
 __device__ volatile int sem = 0;
 

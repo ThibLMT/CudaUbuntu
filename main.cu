@@ -7,6 +7,7 @@
 #include "init_params.cuh"
 #include "sub_domain.cuh"
 #include "write_micro.cuh"
+#include "Lock.cuh"
 
 #define NB_PART 200
 #define SYSSIZEX 5

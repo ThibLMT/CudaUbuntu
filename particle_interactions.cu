@@ -14,7 +14,7 @@
 
 
 #include "particle_interactions.cuh"
-#include "dlvo_forces.cuh"
+//#include "dlvo_forces.cuh"
 #include "tangential_force_mindlin_vect.cuh"
 #include "small_vect_rot.cuh"
 #include "rolling_resistance_torque.cuh"

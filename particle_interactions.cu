@@ -27,7 +27,7 @@ __device__ void set_vect_0(vector *vec)
 }
 // Using these following interaction force described in main.c for the moment. The other are declared in list header files
 
-__device__ void particle_interactions(unsigned int ni,unsigned int nj,int k_ij,vector* forceji_pointer,vector* torqueji_pointer,discrete_elt *particle,geom_struct geom)
+__device__ void particle_interactions(unsigned int ni,unsigned int nj,int k_ij,vector* forceji_pointer,vector* torqueji_pointer,discrete_elt *particle,geom_struct *geom)
 /* Calls: no other routines */
 /* Called by: integrate() */
 {
@@ -68,15 +68,15 @@ __device__ void particle_interactions(unsigned int ni,unsigned int nj,int k_ij,v
     vector forceji; //!< Total force exerced by partj on part i (global basis)
     vector torqueji; //!< Total torque exerced by partj on part i (global basis)
     unsigned int npart,nsurf;
-    npart=geom.nb_part;
-    nsurf=geom.nb_bc;
+    npart=geom->nb_part;
+    nsurf=geom->nb_bc;
     double deltat;
-    deltat=geom.deltat;
+    deltat=geom->deltat;
     int syssizex,syssizey,syssizez,syssizel;
-    syssizex=geom.sizex;
-    syssizey=geom.sizey;
-    syssizez=geom.sizez;
-    syssizel=geom.sizel;
+    syssizex=geom->sizex;
+    syssizey=geom->sizey;
+    syssizez=geom->sizez;
+    syssizel=geom->sizel;
     // Initialization of forceij and torqie ij vectors
     set_vect_0(&forceji);
     set_vect_0(&torqueji);
@@ -336,9 +336,9 @@ __device__ void particle_interactions(unsigned int ni,unsigned int nj,int k_ij,v
 	    }
 	  else if (tan_force_model==2)
 	    {*/
-            ftan=small_vect_rot(particle[ni].ftanold[k_ij],nij,particle[ni].nijold[k_ij],particle[ni].Wi,particle[nj].Wi,geom.deltat);
+            ftan=small_vect_rot(particle[ni].ftanold[k_ij],nij,particle[ni].nijold[k_ij],particle[ni].Wi,particle[nj].Wi,geom->deltat);
 
-            ftan=tangential_force_mindlin_vect(deltan,fabs(fncontact),muij,rij,Gij,ftan,vrtij,geom.deltat);
+            ftan=tangential_force_mindlin_vect(deltan,fabs(fncontact),muij,rij,Gij,ftan,vrtij,geom->deltat);
 
             ftcontact=sqrt(ftan.x*ftan.x+ftan.y*ftan.y+ftan.z*ftan.z);
             // }

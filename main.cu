@@ -10,7 +10,7 @@
 #include "Lock.cuh"
 #include "cal_interactions_forces.cuh"
 
-#define NB_PART 10000
+#define NB_PART 2
 #define SYSSIZEX 5
 #define SYSSIZEY 5
 #define SYSSIZEZ 14
@@ -52,8 +52,6 @@ int main() {
 
     cudaMallocManaged(&geom, sizeof(geom_struct));
 
-    // * Get the number of particles
-    geom->nb_part = NB_PART;
     // * Get the number of boundary contacts
     geom->nb_bc = BOUNDARYCONT;
     read_geom_param(geom);
@@ -126,13 +124,13 @@ int main() {
     }
 
     geom->deltat=0.000001;
-    niter=100000;
+    niter=1000000;
     imicro=0;
     iter=0;
     microfile_write("micro_ini",particle,geom);
 
     do{
-        if(iter%1000==0)
+        if(iter%10000==0)
         {
             sprintf(filename,"micro_%04d",imicro);
             printf("micro iter %d %d \n",iter,imicro);

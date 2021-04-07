@@ -52,6 +52,8 @@ int main() {
 
     cudaMallocManaged(&geom, sizeof(geom_struct));
 
+    // * Get the number of particles
+    geom->nb_part = microfile_read_npart(Nmicrofile);
     // * Get the number of boundary contacts
     geom->nb_bc = BOUNDARYCONT;
     read_geom_param(geom);

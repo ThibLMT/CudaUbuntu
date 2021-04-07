@@ -43,8 +43,6 @@ void microfile_read_particle(const char *Nfile,discrete_elt *particle,geom_struc
         (void)fscanf(fmicrofile,"%lf",&unity);
         (void)fscanf(fmicrofile,"\n");
 
-        geom->nb_part = npart;
-
         // Scanning of the coordinates of particles and placement in the mic array
         for(i=1;i<=npart;i++)
         {

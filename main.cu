@@ -10,7 +10,7 @@
 #include "Lock.cuh"
 #include "cal_interactions_forces.cuh"
 
-#define NB_PART 200
+#define NB_PART 10000
 #define SYSSIZEX 5
 #define SYSSIZEY 5
 #define SYSSIZEZ 14
@@ -132,7 +132,7 @@ int main() {
     microfile_write("micro_ini",particle,geom);
 
     do{
-        if(iter%10000==0)
+        if(iter%1000==0)
         {
             sprintf(filename,"micro_%04d",imicro);
             printf("micro iter %d %d \n",iter,imicro);

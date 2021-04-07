@@ -1,0 +1,58 @@
+#******************************************************************
+#demGCE Simulation comments 
+#project : appel empilement 10000 particules puis sous gravite pendant 10000 ite
+#Note : projet parcodegran
+#Date : 05/08/2013
+#****************************************************************** 							 
+
+#Comment file : # or !										
+
+#=================================
+# Definition of the sphere packing
+#=================================
+
+## Size of problem and unity ##  
+
+syssize=[23][23][38]					! System size : [SYSSIZEX][SYSSIZEY][SYSSIZEZ]
+unity=10.0E-03                 		! unité définissant la taille d'un pixel (m)
+
+## Boundary conditions ##
+rigidwall(0,0,0,0,1,0)      			! rigidwall(x-,x+,y-,y+,z-,z+) : Add rigid wall vector normal along x , y and z axes with i-or+ equal to 0 or 1
+
+## Sphere packing elaboration ##
+nseed=-32                       		! graine pour la génération aléatoire de l'empilement (-)(il est conseillé de la choisir négative)
+
+#PackingGeneration=RSA(npart=10000,rpart=0.5)
+readmicro(init_micro,init_micro_cont)
+#=================================
+# DEFINITION OF THE INTERACTIONS
+==================================
+## MILIEU SOLIDE : PARAMETRES DES GRAINS ##
+density=2500.0										! masse volumique des particules (en kg/m^3)
+
+
+## Contact law : micromecanical paremeters ## 
+ModuleYoung=1.0E+07				            		! Moudule d'Young  en Pascal (Pa-->N/m^2)
+nu=0.29                                         	! coefficient de Poisson du matériau    (-)
+cn=7.0E-05											! constante d'amortissement visqueux normal (N.s/m^2) ici sans unite
+
+Force_tangential(2,0.3,0.5)
+
+
+
+#=========================================
+#   TYPE OF PROBLEM and NUMEriCAL PARAMETERS
+#=========================================
+
+
+sedimentation()
+# Parametres numeriques
+deltat=1.e-6                                ! pas de temps de calcul en secondes (s) If 0, using of the cal_time_step function
+niter=500000				! Number of iterations
+
+## AFFICHAGE ECRAN ET SAUVEGARDE RESULTATS ####
+ndodisplay=25000	                                    ! Iteration increment for screen info display
+ndowrite=2500                                     	! Iteration increment for the writing of the results (in result.dat file) (-)
+ndowritemicro=25000									! Iteration increment for the writing of the microsctructure files (0 -> no file)
+ndowritevtk=25000									! Iteration increment for the writing of the vtk file (0 -> no file)
+#contact_history(196,201)

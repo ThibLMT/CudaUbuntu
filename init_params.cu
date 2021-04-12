@@ -35,6 +35,13 @@ void read_geom_param(geom_struct *geom_para)
     // Read unity length Conversion
     nstring=get_line_char("unity",tab_char);
     if (!strcmp ((const char *) tab_char[0], "unity")) {geom_para_read.unity = atof (tab_char[1]);}
+
+    nstring=get_line_char("deltat",tab_char);
+    if (!strcmp ((const char *) tab_char[0], "deltat"))
+    {
+        geom_para_read.deltat = round(atof (tab_char[1]) * 1000000.0) / 1000000.0;
+    }
+
     *geom_para=geom_para_read;
 }
 
@@ -134,4 +141,22 @@ void read_table_mat(material_data *tab_mat_part)
     }
 
     *tab_mat_part=mat_params;
+}
+
+void read_parameters(parameters_data *parameters)
+{
+    parameters_data para_read;
+    char **tab_char;  //!< array of string
+    int i,k,nstring;
+    // Initialization and allocation
+    para_read=*parameters;
+    tab_char= static_cast<char **>(malloc(50 * sizeof(char *)));
+    for(i=0;i<50;i++) {tab_char[i]= static_cast<char *>(malloc(256 * sizeof(char)));}
+
+    nstring=get_line_char("niter",tab_char);
+    if (!strcmp ((const char *) tab_char[0], "niter")) {para_read.niter = atof (tab_char[1]);}
+
+    nstring=get_line_char("ndowritemicro",tab_char);
+    if (!strcmp ((const char *) tab_char[0], "ndowritemicro")) {para_read.ndowritemicro = atof (tab_char[1]);}
+    *parameters=para_read;
 }

@@ -15,4 +15,5 @@ void read_table_mat(material_data *tab_mat_part);
 void read_geom_param(geom_struct *geom_para);
 int get_line_char(char *detect,char **tab_char);
 void adi_params(material_data *prop_mat_part,geom_struct *geom);
+void read_parameters(parameters_data *parameters);
 #endif //CUDAUBUNTU_INIT_PARAMS_CUH

@@ -30,6 +30,7 @@ char Nobjfile[50];
 //
 
 material_data prop_mat_part;
+parameters_data parameters;
 
 
 //

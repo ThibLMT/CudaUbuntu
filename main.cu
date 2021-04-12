@@ -77,6 +77,8 @@ int main() {
     // Bulk parameters
     read_table_mat(&prop_mat_part);
 
+    read_parameters(&parameters);
+
     // Friction parameters
     prop_mat_part.mu_gg=0.3; //!< Friction coefficient grain-grain
     prop_mat_part.mu_gw=0.3; //!< Friction coefficient grain-wall
@@ -125,14 +127,14 @@ int main() {
 
     }
 
-    geom->deltat=0.000001;
-    niter=1000000;
+
+    niter=parameters.niter;
     imicro=0;
     iter=0;
     microfile_write("micro_ini",particle,geom);
 
     do{
-        if(iter%10000==0)
+        if(parameters.ndowritemicro != 0 && iter% parameters.ndowritemicro == 0)
         {
             sprintf(filename,"micro_%04d",imicro);
             printf("micro iter %d %d \n",iter,imicro);

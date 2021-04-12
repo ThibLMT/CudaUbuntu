@@ -87,7 +87,11 @@ typedef struct mat     //!< Material parameter
     double mu_roll_gw; //!< Rolling friction coefficient grain-wall
 } material_data;
 
-
+typedef struct para   //!< Iterations and output writing parameters
+{
+    int niter; //!< Number of iterations to run
+    int ndowritemicro; //!< Number of micro files to write
+} parameters_data;
 
 #endif /* DEF_TYPES_H_ */
 

@@ -77,9 +77,9 @@ __global__ void cal_interaction_forces(discrete_elt *particle,geom_struct *geom,
             particle[idparti].Fi.y += forceji.y;
             particle[idparti].Fi.z += forceji.z;
 
-            particle->Mi.x += torqueji.x;
-            particle->Mi.y += torqueji.y;
-            particle->Mi.z += torqueji.z;
+            particle[idparti].Mi.x += torqueji.x;
+            particle[idparti].Mi.y += torqueji.y;
+            particle[idparti].Mi.z += torqueji.z;
 
             // Add the balanced force for boundary conditions
             //if(idpartj>geom.nb_part){printf("i %d j %d f %e %e %f \n",idparti,idpartj,forceji.x,forceji.y,forceji.z);}
